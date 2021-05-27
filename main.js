@@ -4,6 +4,7 @@
 // When the message appears, the mediation icon disappears from the message area
 // select message option
 
+// THIS IS A FUNCTIONAL VERSION FOR ALL OF ITERATION ONE
 
 // 👇 query selectors here...👇
 var selectAffirmation = document.querySelector("#affirmation");
@@ -11,7 +12,6 @@ var selectMantra = document.querySelector("#mantra");
 var receiveMessageButton = document.querySelector('.button');
 var messageDisplay = document.querySelector('.received-message');
 var iconDisplay = document.querySelector('.meditate-img');
-// Do i need messageDisplay query?
 
 
 // 👇 data and global variables go here...👇
@@ -68,5 +68,6 @@ function getMessage() {
   else if (selectAffirmation.checked){
     messageDisplay.innerText = `${affirmations[getRandomIndex(affirmations)]}`
   }
-
+  messageDisplay.classList.remove('hidden');
+  iconDisplay.classList.add('hidden');
 }
