@@ -93,14 +93,11 @@ input[type=radio] {
   border-radius: 12px;
   margin-bottom: 10%;
   min-height: 100px;
-/*   border-radius: 10px;
-  padding-top: 12%;
-  padding-bottom: 12%;
-  width: 70%;
-  margin: auto;
-  margin-bottom: 10%;
-  height: 20%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .meditate-img {
   width: 80px;
