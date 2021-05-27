@@ -1,21 +1,22 @@
+// 👇 notes and checklist goes here...👇
 // When a user selects a message option and then clicks the “Receive Message” button,
 //the user sees a random message from the list of possible messages for that category
 // When the message appears, the mediation icon disappears from the message area
 // select message option
   // query seleltors
-    // [] radios
-    // [] get message button
-    // [] message display section
+    // [X] radios
+    // [X] get message button
+    // [X] message display section
 
 
-//query selectors here...👇
+// 👇 query selectors here...👇
 var getSelectedRadio = document.querySelector('input[name='selection']:checked');
 var receiveMessageButton = document.querySelector('.button');
 var messageDisplay = document.querySelector('.received-message');
 // Do i need messageDisplay query?
 
 
-//data and global variables go here...👇
+// 👇 data and global variables go here...👇
 var affirmations = [
 "I forgive myself and set myself free.",
 "I believe I can be all that I want to be.",
@@ -52,12 +53,12 @@ var mantras = [
 ];
 
 
-// event listeners go here 👇
+// 👇 event listeners go here 👇
 // window.addEventListener('load', FUNCTION);
-// receiveMessageButton.addEventListener('click', FUNCTION);
+receiveMessageButton.addEventListener('click', FUNCTION);
 
 
-// functions and event handlers go here 👇
+// 👇 functions and event handlers go here 👇
 // function getRandomIndex(array) {
 //   return Math.floor(Math.random() * array.length);
 // }
