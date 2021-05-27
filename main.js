@@ -3,10 +3,6 @@
 //the user sees a random message from the list of possible messages for that category
 // When the message appears, the mediation icon disappears from the message area
 // select message option
-  // query seleltors
-    // [X] radios
-    // [X] get message button
-    // [X] message display section
 
 
 // 👇 query selectors here...👇
@@ -14,6 +10,7 @@ var selectAffirmation = document.querySelector("#affirmation");
 var selectMantra = document.querySelector("#mantra");
 var receiveMessageButton = document.querySelector('.button');
 var messageDisplay = document.querySelector('.received-message');
+var iconDisplay = document.querySelector('.meditate-img');
 // Do i need messageDisplay query?
 
 
@@ -71,5 +68,5 @@ function getMessage() {
   else if (selectAffirmation.checked){
     messageDisplay.innerText = `${affirmations[getRandomIndex(affirmations)]}`
   }
-  console.log("it ran");
+
 }
