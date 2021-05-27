@@ -10,14 +10,15 @@
 
 
 // 👇 query selectors here...👇
-var getSelectedRadio = document.querySelector('input[name='selection']:checked');
+var selectAffirmation = document.querySelector("#affirmation");
+var selectMantra = document.querySelector("#mantra");
 var receiveMessageButton = document.querySelector('.button');
 var messageDisplay = document.querySelector('.received-message');
 // Do i need messageDisplay query?
 
 
 // 👇 data and global variables go here...👇
-var affirmation = [
+var affirmations = [
 "I forgive myself and set myself free.",
 "I believe I can be all that I want to be.",
 "I am in the process of becoming the best version of myself.",
@@ -33,7 +34,7 @@ var affirmation = [
 "I manifest perfect health by making smart choices.",
 ];
 
-var mantra = [
+var mantras = [
 "Breathing in, I send myself love.",
 "Breathing out, I send love to someone else who needs it.",
 "Don’t let yesterday take up too much of today.",
@@ -55,16 +56,20 @@ var mantra = [
 
 // 👇 event listeners go here 👇
 // window.addEventListener('load', FUNCTION);
-receiveMessageButton.addEventListener('click', getSelectedRadio);
+receiveMessageButton.addEventListener('click', getMessage);
 
 
 // 👇 functions and event handlers go here 👇
-// function getRandomIndex(array) {
-//   return Math.floor(Math.random() * array.length);
-// }
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
 
-function getSelectedRadio() {
-  if(getSelectedRadio !=null) {
-    var title = getSelectedRadio;
+function getMessage() {
+  if (selectMantra.checked) {
+    messageDisplay.innerText = `${mantras[getRandomIndex(mantras)]}`
   }
+  else if (selectAffirmation.checked){
+    messageDisplay.innerText = `${affirmations[getRandomIndex(affirmations)]}`
+  }
+  console.log("it ran");
 }
