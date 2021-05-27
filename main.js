@@ -17,7 +17,7 @@ var messageDisplay = document.querySelector('.received-message');
 
 
 // 👇 data and global variables go here...👇
-var affirmations = [
+var affirmation = [
 "I forgive myself and set myself free.",
 "I believe I can be all that I want to be.",
 "I am in the process of becoming the best version of myself.",
@@ -33,7 +33,7 @@ var affirmations = [
 "I manifest perfect health by making smart choices.",
 ];
 
-var mantras = [
+var mantra = [
 "Breathing in, I send myself love.",
 "Breathing out, I send love to someone else who needs it.",
 "Don’t let yesterday take up too much of today.",
@@ -55,10 +55,16 @@ var mantras = [
 
 // 👇 event listeners go here 👇
 // window.addEventListener('load', FUNCTION);
-receiveMessageButton.addEventListener('click', FUNCTION);
+receiveMessageButton.addEventListener('click', getSelectedRadio);
 
 
 // 👇 functions and event handlers go here 👇
 // function getRandomIndex(array) {
 //   return Math.floor(Math.random() * array.length);
 // }
+
+function getSelectedRadio() {
+  if(getSelectedRadio !=null) {
+    var title = getSelectedRadio;
+  }
+}
