@@ -33,10 +33,12 @@ header {
 
 h1, h2 {
   color: #ffffff;
+  margin-bottom: 1%;
 }
 
 .question {
   font-color: #ffffff;
+  margin-bottom: 0.5%;
 }
 
 .selectors {
@@ -96,6 +98,7 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.2em;
 }
 
 
