@@ -76,7 +76,7 @@ function resetArray(array) {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-    var message = "Great! You've seen all sayings and the list will now refresh"
+    var message = "Great! You've seen all sayings and the list will now refresh ...";
     array.push(message);
     return array;
 }
