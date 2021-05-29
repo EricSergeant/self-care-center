@@ -53,10 +53,16 @@ var mantras = [
 "I am the sky, the rest is weather."
 ];
 
+var holdingMantras = [];
+// var viewingMantras = [];
+
+var viewingAffirmtions = [];
+// console.log(viewedSayings.length);
 
 // 👇 event listeners go here 👇
-// window.addEventListener('load', FUNCTION);
+window.addEventListener('load', resetAll());
 receiveMessageButton.addEventListener('click', getMessage);
+console.log(holdingMantras);
 
 
 // 👇 functions and event handlers go here 👇
@@ -64,13 +70,75 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
+function resetAll() {
+  if (holdingMantras.length < mantras.length) {
+    for (var i = 0; i<mantras.length;i++) {
+    
+    }
+  }
+  holdingMantras = mantras[getRandomIndex(mantras)];
+}
+
 function getMessage() {
   if (selectMantra.checked) {
-    messageDisplay.innerText = `${mantras[getRandomIndex(mantras)]}`
-  }
-  else if (selectAffirmation.checked){
-    messageDisplay.innerText = `${affirmations[getRandomIndex(affirmations)]}`
+    // var holdingMantra = mantras[getRandomIndex(mantras)];
+    holdingMantras = mantras;
+    userMantras();
+    // console.log(viewingMantras);
+    // return holdingMantra;
+    // testFunc();
+    // messageDisplay.innerText = `${mantras[getRandomIndex(mantras)]}`
+    }
+  if (selectAffirmation.checked){
+    userAffirmations();
+    // messageDisplay.innerText = `${affirmations[getRandomIndex(affirmations)]}`
   }
   messageDisplay.classList.remove('hidden');
   iconDisplay.classList.add('hidden');
 }
+
+function userMantras() {
+  if (viewingMantras.length > 0) {
+    holdingMantras = `${mantras[getRandomIndex(mantras)]}`;
+    messageDisplay.innerText = grabbedMantra;
+  } else {
+    messageDisplay.innerText = `Great! You've seen all mantras and the list will now refresh`;
+  }
+}
+
+
+// function userMantras() {
+//   var holdingMantra = mantras[getRandomIndex(mantras)];
+//   // console.log(Array.isArray(viewedSayings));
+//   // console.log(holdingMantra);
+//   if (viewingMantras.length < 1) {
+//     messageDisplay.innerText = `Great! You've seen all mantras and the list will now refresh`
+//     // var viewedSayings = []
+//   // } else if (!viewingMantras.includes(holdingMantra)) {
+//   } else {
+//     viewingMantras.push(holdingMantra);
+//     messageDisplay.innerText = holdingMantra;
+//   }
+// }
+
+function testFunc() {
+  if (viewedSayings.length > mantras.length) {
+    console.log('manter larger', viewedSayings.length)
+  } else {
+    console.log('mantras larger', viewedSayings.length);
+  }
+  console.log(!viewedSayings.length > mantras.length);
+}
+
+  // console.log(viewedSayings);
+
+
+  // for (var i=0; i<viewedSayings.length;i++){
+  //   if (viewedSayings[i] !== holdingMantra) {
+  //     viewedSayings.push(holdingMantra);
+  //     messageDisplay.innerText = holdingMantra;
+  //     console.log(viewedSayings);
+  //   } else {
+  //     break;
+  //   }
+  // }
