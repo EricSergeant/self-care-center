@@ -33,10 +33,12 @@ header {
 
 h1, h2 {
   color: #ffffff;
+  margin-bottom: 1%;
 }
 
 .question {
   font-color: #ffffff;
+  margin-bottom: 0.5%;
 }
 
 .selectors {
@@ -93,14 +95,12 @@ input[type=radio] {
   border-radius: 12px;
   margin-bottom: 10%;
   min-height: 100px;
-/*   border-radius: 10px;
-  padding-top: 12%;
-  padding-bottom: 12%;
-  width: 70%;
-  margin: auto;
-  margin-bottom: 10%;
-  height: 20%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
 }
+
 
 .meditate-img {
   width: 80px;

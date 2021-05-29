@@ -1,19 +1,12 @@
 // 👇 notes and checklist goes here...👇
-// When a user selects a message option and then clicks the “Receive Message” button,
-//the user sees a random message from the list of possible messages for that category
-// When the message appears, the mediation icon disappears from the message area
-// select message option
-  // query seleltors
-    // [X] radios
-    // [X] get message button
-    // [X] message display section
-
+// [X] After they’ve seen them all they should be notified that they will now start seeing repeat messages.
 
 // 👇 query selectors here...👇
-var getSelectedRadio = document.querySelector('input[name='selection']:checked');
+var selectAffirmation = document.querySelector("#affirmation");
+var selectMantra = document.querySelector("#mantra");
 var receiveMessageButton = document.querySelector('.button');
 var messageDisplay = document.querySelector('.received-message');
-// Do i need messageDisplay query?
+var iconDisplay = document.querySelector('.meditate-img');
 
 
 // 👇 data and global variables go here...👇
@@ -23,10 +16,12 @@ var affirmations = [
 "I am in the process of becoming the best version of myself.",
 "I have the freedom & power to create the life I desire.",
 "I choose to be kind to myself and love myself unconditionally.",
+"Broken promises don't upset me. I just think, why did they believe me?",
 "My possibilities are endless.",
 "I am worthy of my dreams.",
 "I am enough.",
 "I deserve to be healthy and feel good.",
+"When I drop my keys into a river of molten lava, I'll just let them stay there.",
 "I am full of energy and vitality and my mind is calm and peaceful.",
 "Every day I am getting healthier and stronger.",
 "I honor my body by trusting the signals that it sends me.",
@@ -36,10 +31,11 @@ var affirmations = [
 var mantras = [
 "Breathing in, I send myself love.",
 "Breathing out, I send love to someone else who needs it.",
-"Don’t let yesterday take up too much of today.",
+"Don't let yesterday take up too much of today.",
 "Every day is a second chance.",
 "Tell the truth and love everyone.",
 "I am free from sadness.",
+"Snakes don't have arms, that's why they can't wear vests.",
 "I am enough.",
 "In the beginning it is you, in the middle it is you and in the end it is you.",
 "I love myself.",
@@ -52,13 +48,72 @@ var mantras = [
 "I am the sky, the rest is weather."
 ];
 
+var holdingMantras = mantras;
+var mantraCount = 0;
+var holdingAffirmations = affirmations;
+var affirmationCount = 0;
+
 
 // 👇 event listeners go here 👇
-// window.addEventListener('load', FUNCTION);
-receiveMessageButton.addEventListener('click', FUNCTION);
+window.addEventListener('load', resetArray(holdingMantras));
+window.addEventListener('load', resetArray(holdingAffirmations));
+receiveMessageButton.addEventListener('click', getMessage);
+console.log(holdingMantras);
+console.log(holdingAffirmations);
 
 
 // 👇 functions and event handlers go here 👇
-// function getRandomIndex(array) {
-//   return Math.floor(Math.random() * array.length);
-// }
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
+function resetArray(array) {
+  var currentIndex = array.length;
+  while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    var message = "Great! You've seen all sayings and the list will now refresh"
+    array.push(message);
+    return array;
+}
+
+function getMessage() {
+  if (selectMantra.checked) {
+    userMantras();
+    }
+  if (selectAffirmation.checked){
+    userAffirmations();
+  }
+  messageDisplay.classList.remove('hidden');
+  iconDisplay.classList.add('hidden');
+}
+
+function userMantras() {
+  if (mantraCount < holdingMantras.length) {
+    var message = holdingMantras[mantraCount];
+    messageDisplay.innerText = `${message}`;
+    mantraCount += 1;
+  } else {
+    mantraCount = 0;
+    var message = holdingMantras[mantraCount];
+    messageDisplay.innerText = `${message}`;
+    mantraCount += 1;
+  }
+}
+
+function userAffirmations() {
+  if (affirmationCount < holdingAffirmations.length) {
+    var message = holdingAffirmations[affirmationCount];
+    messageDisplay.innerText = `${message}`;
+    affirmationCount += 1;
+  } else {
+    affirmationCount = 0;
+    var message = holdingAffirmations[affirmationCount];
+    messageDisplay.innerText = `${message}`;
+    affirmationCount += 1;
+  }
+}
