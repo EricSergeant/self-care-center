@@ -10,7 +10,7 @@ black - #000000;
 html {
   min-height: 100%;
   font-family: 'Quicksand', sans-serif;
-  font-color: #ffffff;
+  color: #ffffff;
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   text-align: center;
   background-repeat: no-repeat;
@@ -20,13 +20,6 @@ html {
   display: none;
 }
 
-/* body {
-    min-height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-} */
-
 header {
   margin-bottom: 8%;
 }
@@ -34,10 +27,11 @@ header {
 h1, h2 {
   color: #ffffff;
   margin-bottom: 1%;
+  margin-top: 1em;
 }
 
 .question {
-  font-color: #ffffff;
+  color: #ffffff;
   margin-bottom: 0.5%;
 }
 
@@ -50,28 +44,13 @@ h1, h2 {
   border-radius: 12px;
   margin-bottom: 5%;
   font-style: italic;
-/*
-  width: 70%;
-  margin: auto;
-  margin-bottom: 10%;
-  height: 20%;  */
+  color: #000000;
 }
-
-/* label {
-  padding: 1px;
-  margin: 1px;
-  text-align: left;
-} */
 
 input[type=radio] {
     width: 20px;
     height: 20px;
-/*     margin: 0 10px 0 10px; */
 }
-
-/* #affirmation {
-    display: inline-block;
-} */
 
 .button {
   display: block;
@@ -99,8 +78,40 @@ input[type=radio] {
   justify-content: center;
   align-items: center;
   font-size: 1.2em;
+  color: #000000;
 }
 
+/*
+.item-a {
+  grid-area: rad-left;
+}
+.item-b {
+  grid-area: title-left;
+}
+.item-c {
+  grid-area: title-right;
+}
+.item-d {
+  grid-area: title-left;
+}
+
+.radios {
+  display: grid;
+  grid-template-columns: 10% 20% 40% 10% 20%;
+  grid-template-areas:
+    "rad-left title-left . title-right rad-right"
+}
+*/
+
+.radios {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%;
+  display: grid;
+  grid-template-columns: 10% 20% auto 10% 20%;
+  width: 80%;
+  font-style: italic;
+}
 
 .meditate-img {
   width: 80px;
