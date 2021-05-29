@@ -53,16 +53,15 @@ var mantras = [
 "I am the sky, the rest is weather."
 ];
 
-var holdingMantras = [];
-// var viewingMantras = [];
+var holdingMantras = mantras;
+var holdingAffirmations = affirmations;
 
-var viewingAffirmtions = [];
-// console.log(viewedSayings.length);
 
 // 👇 event listeners go here 👇
-window.addEventListener('load', resetAll());
+window.addEventListener('load', resetArray(holdingMantras));
+window.addEventListener('load', resetArray(holdingAffirmations));
 receiveMessageButton.addEventListener('click', getMessage);
-console.log(holdingMantras);
+console.log(holdingAffirmations);
 
 
 // 👇 functions and event handlers go here 👇
@@ -70,19 +69,23 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-function resetAll() {
-  if (holdingMantras.length < mantras.length) {
-    for (var i = 0; i<mantras.length;i++) {
-    
+function resetArray(array) {
+  var currentIndex = array.length;
+  while (currentIndex !== 0) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
     }
-  }
-  holdingMantras = mantras[getRandomIndex(mantras)];
+    return array;
 }
+
 
 function getMessage() {
   if (selectMantra.checked) {
-    // var holdingMantra = mantras[getRandomIndex(mantras)];
-    holdingMantras = mantras;
     userMantras();
     // console.log(viewingMantras);
     // return holdingMantra;
@@ -98,47 +101,20 @@ function getMessage() {
 }
 
 function userMantras() {
-  if (viewingMantras.length > 0) {
-    holdingMantras = `${mantras[getRandomIndex(mantras)]}`;
-    messageDisplay.innerText = grabbedMantra;
+  if (holdingMantras.length > 0){
+    // holdingMantras.pop() = `${mantras[getRandomIndex(mantras)]}`;
+    messageDisplay.innerText = `${holdingMantras.pop()}`;
   } else {
+    resetArray(holdingMantras);
     messageDisplay.innerText = `Great! You've seen all mantras and the list will now refresh`;
   }
 }
 
-
-// function userMantras() {
-//   var holdingMantra = mantras[getRandomIndex(mantras)];
-//   // console.log(Array.isArray(viewedSayings));
-//   // console.log(holdingMantra);
-//   if (viewingMantras.length < 1) {
-//     messageDisplay.innerText = `Great! You've seen all mantras and the list will now refresh`
-//     // var viewedSayings = []
-//   // } else if (!viewingMantras.includes(holdingMantra)) {
-//   } else {
-//     viewingMantras.push(holdingMantra);
-//     messageDisplay.innerText = holdingMantra;
-//   }
-// }
-
-function testFunc() {
-  if (viewedSayings.length > mantras.length) {
-    console.log('manter larger', viewedSayings.length)
+function userAffirmations() {
+  if (holdingAffirmations.length > 0){
+    messageDisplay.innerText = `${holdingAffirmations.pop()}`;
   } else {
-    console.log('mantras larger', viewedSayings.length);
+    resetArray(holdingAffirmations);
+    messageDisplay.innerText = `Great! You've seen all affirmations and the list will now refresh`;
   }
-  console.log(!viewedSayings.length > mantras.length);
 }
-
-  // console.log(viewedSayings);
-
-
-  // for (var i=0; i<viewedSayings.length;i++){
-  //   if (viewedSayings[i] !== holdingMantra) {
-  //     viewedSayings.push(holdingMantra);
-  //     messageDisplay.innerText = holdingMantra;
-  //     console.log(viewedSayings);
-  //   } else {
-  //     break;
-  //   }
-  // }
