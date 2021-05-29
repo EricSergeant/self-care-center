@@ -1,6 +1,3 @@
-// 👇 notes and checklist goes here...👇
-// [X] After they’ve seen them all they should be notified that they will now start seeing repeat messages.
-
 // 👇 query selectors here...👇
 var selectAffirmation = document.querySelector("#affirmation");
 var selectMantra = document.querySelector("#mantra");
@@ -58,8 +55,6 @@ var affirmationCount = 0;
 window.addEventListener('load', resetArray(holdingMantras));
 window.addEventListener('load', resetArray(holdingAffirmations));
 receiveMessageButton.addEventListener('click', getMessage);
-console.log(holdingMantras);
-console.log(holdingAffirmations);
 
 
 // 👇 functions and event handlers go here 👇

@@ -81,28 +81,6 @@ input[type=radio] {
   color: #000000;
 }
 
-/*
-.item-a {
-  grid-area: rad-left;
-}
-.item-b {
-  grid-area: title-left;
-}
-.item-c {
-  grid-area: title-right;
-}
-.item-d {
-  grid-area: title-left;
-}
-
-.radios {
-  display: grid;
-  grid-template-columns: 10% 20% 40% 10% 20%;
-  grid-template-areas:
-    "rad-left title-left . title-right rad-right"
-}
-*/
-
 .radios {
   margin-left: 10%;
   margin-right: 10%;
