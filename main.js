@@ -1,5 +1,5 @@
 // 👇 notes and checklist goes here...👇
-// [ ] After they’ve seen them all they should be notified that they will now start seeing repeat messages.
+// [X] After they’ve seen them all they should be notified that they will now start seeing repeat messages.
 
 // 👇 query selectors here...👇
 var selectAffirmation = document.querySelector("#affirmation");
@@ -49,22 +49,23 @@ var mantras = [
 ];
 
 var holdingMantras = mantras;
+var mantraCount = 0;
 var holdingAffirmations = affirmations;
+var affirmationCount = 0;
 
 
 // 👇 event listeners go here 👇
 window.addEventListener('load', resetArray(holdingMantras));
 window.addEventListener('load', resetArray(holdingAffirmations));
 receiveMessageButton.addEventListener('click', getMessage);
-// console.log(holdingAffirmations);
 console.log(holdingMantras);
+console.log(holdingAffirmations);
 
 
 // 👇 functions and event handlers go here 👇
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
-
 
 function resetArray(array) {
   var currentIndex = array.length;
@@ -75,9 +76,10 @@ function resetArray(array) {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
+    var message = "Great! You've seen all sayings and the list will now refresh"
+    array.push(message);
     return array;
 }
-
 
 function getMessage() {
   if (selectMantra.checked) {
@@ -91,20 +93,27 @@ function getMessage() {
 }
 
 function userMantras() {
-  if (holdingMantras.length > 0){
-    messageDisplay.innerText = `${holdingMantras.pop()}`;
+  if (mantraCount < holdingMantras.length) {
+    var message = holdingMantras[mantraCount];
+    messageDisplay.innerText = `${message}`;
+    mantraCount += 1;
   } else {
-    messageDisplay.innerText = `Great! You've seen all mantras and the list will now refresh`;
-    resetArray(holdingMantras);
-    console.log(holdingMantras);
+    mantraCount = 0;
+    var message = holdingMantras[mantraCount];
+    messageDisplay.innerText = `${message}`;
+    mantraCount += 1;
   }
 }
 
 function userAffirmations() {
-  if (holdingAffirmations.length > 0){
-    messageDisplay.innerText = `${holdingAffirmations.pop()}`;
+  if (affirmationCount < holdingAffirmations.length) {
+    var message = holdingAffirmations[affirmationCount];
+    messageDisplay.innerText = `${message}`;
+    affirmationCount += 1;
   } else {
-    // populateMantras();
-    messageDisplay.innerText = `Great! You've seen all affirmations and the list will now refresh`;
+    affirmationCount = 0;
+    var message = holdingAffirmations[affirmationCount];
+    messageDisplay.innerText = `${message}`;
+    affirmationCount += 1;
   }
 }
