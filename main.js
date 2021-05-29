@@ -1,10 +1,5 @@
 // 👇 notes and checklist goes here...👇
-// When a user selects a message option and then clicks the “Receive Message” button,
-//the user sees a random message from the list of possible messages for that category
-// When the message appears, the mediation icon disappears from the message area
-// select message option
-
-// THIS IS A FUNCTIONAL VERSION FOR ALL OF ITERATION ONE
+// [ ] After they’ve seen them all they should be notified that they will now start seeing repeat messages.
 
 // 👇 query selectors here...👇
 var selectAffirmation = document.querySelector("#affirmation");
@@ -61,7 +56,8 @@ var holdingAffirmations = affirmations;
 window.addEventListener('load', resetArray(holdingMantras));
 window.addEventListener('load', resetArray(holdingAffirmations));
 receiveMessageButton.addEventListener('click', getMessage);
-console.log(holdingAffirmations);
+// console.log(holdingAffirmations);
+console.log(holdingMantras);
 
 
 // 👇 functions and event handlers go here 👇
@@ -69,13 +65,12 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
+
 function resetArray(array) {
   var currentIndex = array.length;
   while (currentIndex !== 0) {
-      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
-      // And swap it with the current element.
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
@@ -87,14 +82,9 @@ function resetArray(array) {
 function getMessage() {
   if (selectMantra.checked) {
     userMantras();
-    // console.log(viewingMantras);
-    // return holdingMantra;
-    // testFunc();
-    // messageDisplay.innerText = `${mantras[getRandomIndex(mantras)]}`
     }
   if (selectAffirmation.checked){
     userAffirmations();
-    // messageDisplay.innerText = `${affirmations[getRandomIndex(affirmations)]}`
   }
   messageDisplay.classList.remove('hidden');
   iconDisplay.classList.add('hidden');
@@ -102,11 +92,11 @@ function getMessage() {
 
 function userMantras() {
   if (holdingMantras.length > 0){
-    // holdingMantras.pop() = `${mantras[getRandomIndex(mantras)]}`;
     messageDisplay.innerText = `${holdingMantras.pop()}`;
   } else {
-    resetArray(holdingMantras);
     messageDisplay.innerText = `Great! You've seen all mantras and the list will now refresh`;
+    resetArray(holdingMantras);
+    console.log(holdingMantras);
   }
 }
 
@@ -114,7 +104,7 @@ function userAffirmations() {
   if (holdingAffirmations.length > 0){
     messageDisplay.innerText = `${holdingAffirmations.pop()}`;
   } else {
-    resetArray(holdingAffirmations);
+    // populateMantras();
     messageDisplay.innerText = `Great! You've seen all affirmations and the list will now refresh`;
   }
 }
