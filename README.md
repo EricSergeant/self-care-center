@@ -36,7 +36,7 @@ The user can continue to receive messages by clicking the "Receive Message" butt
 ![image of ending message](https://github.com/EricSergeant/self-care-center/blob/main/Final%20message%20screenshot.png "Final message note")
 
 ## Building and Deploying...
-The code for this project was written in Atom, to meet the required specifications of the project and to match the design/layout as closely as possible to the comp.  The [deploy link](https://ericsergeant.github.io/self-care-center/) is available for viewing the page.
+The code for this project was written in Atom, to meet the required specifications of the project and to match the design/layout as closely as possible to the comp. It was written in HTML, CSS, JavaScript, and markdown.  The [deploy link](https://ericsergeant.github.io/self-care-center/) is available for viewing the page.
 
 ## Contributions
 The specifications for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html).  
