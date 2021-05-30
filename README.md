@@ -2,7 +2,7 @@
 ## Overview
 > How can I care for myself? One way is with affirmations and mantras!
 
-This solo project challenge was to build an app page that 'helps users remind themselves of their inherent value' by providing a random item from a list of mantras and affirmations.  
+This solo project challenge required the author to build an app page that 'helps users remind themselves of their inherent value' by providing a random item from a list of mantras and affirmations. Page layout and design was to match the comp image provided with the project specifications.
 
 ## What does it do?
 The basic requirements of this app require it to do the following:
@@ -21,14 +21,26 @@ Finally, these features were added to improve the user experience:
 - If a user moves from mantras to affirmations (or vice versa) when they switch back the list will continue from where they left off.
 
 ## How to Use
+You can try the finished page at the [deploy link](https://ericsergeant.github.io/self-care-center/).
 
+When the user opens the page, the list of available mantras and affirmations will be randomized.  To receive a message, the user selects the radio button or label associated with either mantras or affirmations and clicks the "Receive Message" button.  The mediation icon will disappear and their mantra or affirmation will appear in its place.
+
+**_Add gif here_**
+
+If the user neglects to first select either mantra or affirmation, the message will remind them to make a choice.
+
+**_Add reminder image here_**
+
+The user can continue to receive messages by clicking the "Receive Message" button and can change between mantras and affirmations at any time.  When the final mantra or affirmation in the randomly-shuffled has been displayed, the user will see a message that they've now seen all sayings and that further clicks of the "Receive Message" button will start displaying messages they've already seen.
+
+**_Add final message image here_**
 
 ## Building and Deploying...
-The code for this project was written in Atom, to meet the required specifications of the project and to match the design/layout as closely as possible to the comp.
+The code for this project was written in Atom, to meet the required specifications of the project and to match the design/layout as closely as possible to the comp.  The [deploy link](https://ericsergeant.github.io/self-care-center/) is available for viewing the page.
 
 ## Contributions
 The specifications for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html).  
 
 A comp was provided as a reference guide for layout and design, along with the mediation icon. Mantras and affirmations were (mostly) provided as part of the specifications for this project.
 
-The coding of the HTML, CSS, and JavaScript was written and completed by @EricSergeant.
+The coding of the HTML, CSS, and JavaScript was written and completed by [Eric Sergeant](https://github.com/ericsergeant).
