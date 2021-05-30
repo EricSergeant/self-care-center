@@ -25,15 +25,15 @@ You can try the finished page at the [deploy link](https://ericsergeant.github.i
 
 When the user opens the page, the list of available mantras and affirmations will be randomized.  To receive a message, the user selects the radio button or label associated with either mantras or affirmations and clicks the "Receive Message" button.  The mediation icon will disappear and their mantra or affirmation will appear in its place.
 
-**_Add gif here_**
+![gif of self care page use clicking on buttons](https://media.giphy.com/media/chxUap8ZYhdrfcNZQk/giphy.gif "Self Care page use")
 
 If the user neglects to first select either mantra or affirmation, the message will remind them to make a choice.
 
-**_Add reminder image here_**
+![image of reminder](https://github.com/EricSergeant/self-care-center/blob/main/Reminder%20message%20screenshot.png "Remind to click selector")
 
 The user can continue to receive messages by clicking the "Receive Message" button and can change between mantras and affirmations at any time.  When the final mantra or affirmation in the randomly-shuffled has been displayed, the user will see a message that they've now seen all sayings and that further clicks of the "Receive Message" button will start displaying messages they've already seen.
 
-**_Add final message image here_**
+![image of ending message](https://github.com/EricSergeant/self-care-center/blob/main/Final%20message%20screenshot.png "Final message note")
 
 ## Building and Deploying...
 The code for this project was written in Atom, to meet the required specifications of the project and to match the design/layout as closely as possible to the comp.  The [deploy link](https://ericsergeant.github.io/self-care-center/) is available for viewing the page.
