@@ -1,24 +1,34 @@
-# Self Care Center
+# Self Care Center - Module 1 Solo Project
 ## Overview
-How can I care for myself? One way is with affirmations and mantras!
-Affirmations are thoughts of positive self-empowerment, meant to assert your self-worth.
-Mantras are repetive phrases that are repeated again and again during mindfulness practices. Your challenge is to build an app that helps users remind themselves of their inherent value!
+> How can I care for myself? One way is with affirmations and mantras!
 
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
+This solo project challenge was to build an app page that 'helps users remind themselves of their inherent value' by providing a random item from a list of mantras and affirmations.  
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html). 
+## What does it do?
+The basic requirements of this app require it to do the following:
 
-## Learning Goals
+- When a user selects a message option and then clicks the “Receive Message” button, the user sees a random message from the list of possible messages for that category.
+- When the message appears, the mediation icon disappears from the message area.
 
-- Gain experience building an application that utilizes HTML, CSS and JavaScript
-- Write HTML and CSS to match a provided comp
-- Understand how to listen to and respond to user events
-- Individualize your programming skill set
+The following additional requirements were chosen by the author to meet the remaining project requirements:
 
-## Setup
+- Use JavaScript to ensure that the user never sees a repeated message until they’ve seen them all.
+- After they’ve seen them all they should be notified that they will now start seeing repeat messages.
 
-- Fork this project to your own Github account
-- Clone the repository to your local machine
-- `cd` into the project
-- Read this README thoroughly, then begin working!
+Finally, these features were added to improve the user experience:
+- The user can click on either the radio button selector or the associated text label to select that message option.
+- If the user clicks the "Receive Message" without selecting one of the two message options, a message will appear asking them to make a selection.
+- If a user moves from mantras to affirmations (or vice versa) when they switch back the list will continue from where they left off.
 
+## How to Use
+
+
+## Building and Deploying...
+The code for this project was written in Atom, to meet the required specifications of the project and to match the design/layout as closely as possible to the comp.
+
+## Contributions
+The specifications for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html).  
+
+A comp was provided as a reference guide for layout and design, along with the mediation icon. Mantras and affirmations were (mostly) provided as part of the specifications for this project.
+
+The coding of the HTML, CSS, and JavaScript was written and completed by @EricSergeant.
