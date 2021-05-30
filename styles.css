@@ -1,16 +1,7 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
-
 html {
   min-height: 100%;
   font-family: 'Quicksand', sans-serif;
-  font-color: #ffffff;
+  color: #ffffff;
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   text-align: center;
   background-repeat: no-repeat;
@@ -20,13 +11,6 @@ html {
   display: none;
 }
 
-/* body {
-    min-height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-} */
-
 header {
   margin-bottom: 8%;
 }
@@ -34,51 +18,32 @@ header {
 h1, h2 {
   color: #ffffff;
   margin-bottom: 1%;
+  margin-top: 1em;
 }
 
 .question {
-  font-color: #ffffff;
+  color: #ffffff;
   margin-bottom: 0.5%;
 }
 
 .selectors {
   background-color: #ffffff;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin: 0 28% 5%;
   padding-top: 1%;
-  padding-bottom: 1%;
+  padding-bottom: 2%;
   border-radius: 12px;
-  margin-bottom: 5%;
   font-style: italic;
-/*
-  width: 70%;
-  margin: auto;
-  margin-bottom: 10%;
-  height: 20%;  */
+  color: #000000;
 }
-
-/* label {
-  padding: 1px;
-  margin: 1px;
-  text-align: left;
-} */
 
 input[type=radio] {
     width: 20px;
     height: 20px;
-/*     margin: 0 10px 0 10px; */
 }
-
-/* #affirmation {
-    display: inline-block;
-} */
 
 .button {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2%;
-  margin-bottom: 1%;
+  margin: 3% auto 0;
   padding: 0.5% 4%;
   background-color: #134d71;
   border-color: #134d71;
@@ -88,19 +53,24 @@ input[type=radio] {
 
 .display {
   background-color: #ffffff;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  margin: 9% 20% 10%;
+  padding: 1% 0;
   border-radius: 12px;
-  margin-bottom: 10%;
-  min-height: 100px;
+  min-height: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2em;
+  color: #000000;
 }
 
+.radios {
+  margin: 1% 10% 0;
+  display: grid;
+  grid-template-columns: 10% 15% auto 10% 15%;
+  width: 80%;
+  font-style: italic;
+}
 
 .meditate-img {
   width: 80px;
